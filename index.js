@@ -15,7 +15,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: err.message });
 });
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.VERCEL !== '1') {
   app.listen(3333, () => {
     console.log('Server running on port 3333');
   });
